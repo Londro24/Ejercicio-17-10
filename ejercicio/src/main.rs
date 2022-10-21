@@ -21,16 +21,13 @@ fn add_new_content(mut f: &File){
 }
 
 fn open_file_to_append(p: &Path) -> File{
-
     let mut binding = OpenOptions::new();
     let binding = binding.append(true);
     let file = match binding.open(p){
         Err(_why) => panic!("No se puede abrir el archivo"),
         Ok(file) => file,
     };
-
-    //add_new_content(&file);
-
+    
     return file
 }
 
@@ -45,7 +42,6 @@ fn open_file_to_read(p: &Path){
         create_blank_file(p);
     }
 }
-
 
 fn main(){
     let path = Path::new("./hola.txt");
