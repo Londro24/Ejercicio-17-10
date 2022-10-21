@@ -15,7 +15,6 @@ fn create_blank_file(p: &Path){
     println!("El archivo fue creado");
 }
 
-
 fn add_new_content(mut f: &File){
     f.write_all(b"Nuevo texto\n");
 }
@@ -27,7 +26,7 @@ fn open_file_to_append(p: &Path) -> File{
         Err(_why) => panic!("No se puede abrir el archivo"),
         Ok(file) => file,
     };
-    
+
     return file
 }
 
